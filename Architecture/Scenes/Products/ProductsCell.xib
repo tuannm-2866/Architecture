@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProductsCell" customModule="Architecture" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-pB-2SZ">
+                        <rect key="frame" x="10" y="8" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7L-Fw-d3K">
+                        <rect key="frame" x="10" y="34" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT1-w7-Aon">
+                        <rect key="frame" x="240" y="0.0" width="80" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="lzu-eb-SWb"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-CS-V8P">
+                        <rect key="frame" x="180" y="0.0" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="g1g-43-4ju"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eT1-w7-Aon" firstAttribute="leading" secondItem="VYo-CS-V8P" secondAttribute="trailing" id="8Dl-Mr-Cvq"/>
+                    <constraint firstItem="m5L-pB-2SZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="MZZ-y2-LVo"/>
+                    <constraint firstItem="eT1-w7-Aon" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SS2-fq-s0p"/>
+                    <constraint firstItem="R7L-Fw-d3K" firstAttribute="leading" secondItem="m5L-pB-2SZ" secondAttribute="leading" id="XfF-JT-xTq"/>
+                    <constraint firstAttribute="bottom" secondItem="VYo-CS-V8P" secondAttribute="bottom" id="Z2C-Ue-BiO"/>
+                    <constraint firstAttribute="trailing" secondItem="eT1-w7-Aon" secondAttribute="trailing" id="i9P-qt-Ubg"/>
+                    <constraint firstItem="VYo-CS-V8P" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="l6R-QV-7ne"/>
+                    <constraint firstItem="m5L-pB-2SZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="mEB-aG-HDL"/>
+                    <constraint firstAttribute="bottom" secondItem="R7L-Fw-d3K" secondAttribute="bottom" constant="8" id="rk2-TK-uw7"/>
+                    <constraint firstAttribute="bottom" secondItem="eT1-w7-Aon" secondAttribute="bottom" id="soA-n9-Mac"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="deleteProductButton" destination="eT1-w7-Aon" id="g1O-7s-XDE"/>
+                <outlet property="editProductButton" destination="VYo-CS-V8P" id="xMZ-HQ-Zmd"/>
+                <outlet property="nameLabel" destination="m5L-pB-2SZ" id="eFq-TZ-GCg"/>
+                <outlet property="priceLabel" destination="R7L-Fw-d3K" id="Mlm-ne-87P"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="94"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

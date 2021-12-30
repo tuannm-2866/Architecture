@@ -9,10 +9,11 @@ protocol Assembler: AnyObject,
                     MainAssembler,
                     AppAssembler,
                     ProductsAssembler,
+                    ProductDetailAssembler,
                     GatewaysAssembler {
     
 }
 
 final class DefaultAssembler: Assembler {
-    
+
 }

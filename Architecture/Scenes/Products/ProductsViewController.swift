@@ -22,6 +22,7 @@ final class ProductsViewController: UIViewController, Bindable {
     var viewModel: ProductsViewModel!
     var disposeBag = DisposeBag()
     var products = [Product]()
+
     
     // MARK: - Life Cycle
     
@@ -39,11 +40,14 @@ final class ProductsViewController: UIViewController, Bindable {
     private func configView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(cellType: ProductCell.self)
+        tableView.register(cellType: ProductsCell.self)
     }
     
     func bindViewModel() {
-        let input = ProductsViewModel.Input(loadTrigger: Driver.just(()))
+        let input = ProductsViewModel.Input(loadTrigger: Driver.just(()),
+                                            selectProductTrigger: tableView.rx.itemSelected.asDriver()
+                                            
+        )
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
         output.products
@@ -51,21 +55,26 @@ final class ProductsViewController: UIViewController, Bindable {
                 self?.products = products
                 self?.tableView.reloadData()
             })
+            .disposed(by: disposeBag)
     }
 }
 
 // MARK: - Binders
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         products.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductCell.self)
-        cell.textLabel?.text = products[indexPath.row].name
-        cell.detailTextLabel?.text = "\(products[indexPath.row].price)"
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductsCell.self)
+        cell.nameLabel.text = products[indexPath.row].name
+        cell.priceLabel.text = "\(products[indexPath.row].price)"
         return cell
     }
+
 }
 
 // MARK: - StoryboardSceneBased

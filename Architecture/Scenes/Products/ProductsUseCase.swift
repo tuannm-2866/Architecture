@@ -13,6 +13,4 @@ protocol ProductsUseCaseType {
 
 struct ProductsUseCase: ProductsUseCaseType, GetProductList {
     var productGateway: ProductGatewayType
-    
-
 }

@@ -18,7 +18,8 @@ struct ProductsViewModel {
 extension ProductsViewModel: ViewModel {
     struct Input {
         let loadTrigger: Driver<Void>
-
+        let selectProductTrigger: Driver<IndexPath>
+//        let deleteProductTrigger: Driver<IndexPath>
     }
     
     struct Output {
@@ -31,7 +32,16 @@ extension ProductsViewModel: ViewModel {
                 self.useCase.getProductList()
                     .asDriverOnErrorJustComplete()
             }
-        
+        input.selectProductTrigger
+            .withLatestFrom(products) { indexPath, products in
+                return products[indexPath.row]
+            }
+            .drive(onNext: { product in
+                self.navigator.toProductDetail(product: product)
+                
+            })
+ 
+            .disposed(by: disposeBag)
         return Output(
             products: products
         )
