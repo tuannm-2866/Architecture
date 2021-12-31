@@ -14,6 +14,10 @@ class ProductsCell: UITableViewCell, NibReusable {
     @IBOutlet weak var editProductButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    var deleteProduct: (() -> Void)?
+    var editProduct: (() -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +29,11 @@ class ProductsCell: UITableViewCell, NibReusable {
         // Configure the view for the selected state
     }
     
+    @IBAction private func deleteProductAction(_ sender: Any) {
+        deleteProduct?()
+    }
+    
+    @IBAction private func editProductAction(_ sender: Any) {
+        editProduct?()
+    }
 }

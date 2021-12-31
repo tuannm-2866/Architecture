@@ -15,11 +15,10 @@ import Then
 final class ProductDetailViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
-    
-    // MARK: - Properties
-    
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
+    
+    // MARK: - Properties
     var viewModel: ProductDetailViewModel!
     var disposeBag = DisposeBag()
     

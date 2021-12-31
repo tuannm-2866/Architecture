@@ -10,6 +10,7 @@ protocol Assembler: AnyObject,
                     AppAssembler,
                     ProductsAssembler,
                     ProductDetailAssembler,
+                    EditProductsAssembler,
                     GatewaysAssembler {
     
 }

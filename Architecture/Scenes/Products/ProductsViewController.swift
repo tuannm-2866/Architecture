@@ -15,13 +15,17 @@ import Then
 final class ProductsViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+
     
     // MARK: - Properties
     
-    @IBOutlet weak var tableView: UITableView!
     var viewModel: ProductsViewModel!
     var disposeBag = DisposeBag()
     var products = [Product]()
+    let deleteProductSubject = PublishSubject<IndexPath>()
+    let editProductSubject = PublishSubject<IndexPath>()
+
 
     
     // MARK: - Life Cycle
@@ -45,8 +49,10 @@ final class ProductsViewController: UIViewController, Bindable {
     
     func bindViewModel() {
         let input = ProductsViewModel.Input(loadTrigger: Driver.just(()),
-                                            selectProductTrigger: tableView.rx.itemSelected.asDriver()
-                                            
+                                            selectProductTrigger: tableView.rx.itemSelected.asDriver(),
+                                            deleteProductTrigger: deleteProductSubject.asDriverOnErrorJustComplete(),
+                                            editProductTrigger: editProductSubject.asDriverOnErrorJustComplete()
+
         )
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
@@ -56,6 +62,10 @@ final class ProductsViewController: UIViewController, Bindable {
                 self?.tableView.reloadData()
             })
             .disposed(by: disposeBag)
+        
+        output.isLoading
+            .drive(rx.isLoading)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -64,6 +74,7 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         products.count
     }
@@ -72,6 +83,13 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductsCell.self)
         cell.nameLabel.text = products[indexPath.row].name
         cell.priceLabel.text = "\(products[indexPath.row].price)"
+        cell.editProduct = {[weak self] in
+            self?.editProductSubject.onNext(indexPath)
+        }
+        
+        cell.deleteProduct = {[weak self] in
+            self?.deleteProductSubject.onNext(indexPath)
+        }
         return cell
     }
 

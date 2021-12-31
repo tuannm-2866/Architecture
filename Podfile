@@ -17,6 +17,7 @@ def pods
     # Others
     pod 'MBProgressHUD', '~> 1.2'
     pod 'SDWebImage', '~> 5.8.3'
+
 end
 
 def test_pods

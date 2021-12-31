@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Products View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditProductsViewController" id="Y6W-OH-hqX" customClass="EditProductsViewController" customModule="Architecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-Ma-PMi">
+                                <rect key="frame" x="50" y="94" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jX5-U3-NcI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHq-w3-oQP">
+                                <rect key="frame" x="50" y="194" width="314" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jHq-w3-oQP" firstAttribute="top" secondItem="PxK-Ma-PMi" secondAttribute="bottom" constant="50" id="1rC-l1-A6W"/>
+                            <constraint firstItem="jHq-w3-oQP" firstAttribute="leading" secondItem="PxK-Ma-PMi" secondAttribute="leading" id="7oi-kl-9wK"/>
+                            <constraint firstItem="PxK-Ma-PMi" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="XBY-Dp-hTd"/>
+                            <constraint firstItem="jHq-w3-oQP" firstAttribute="trailing" secondItem="PxK-Ma-PMi" secondAttribute="trailing" id="Y4m-Dl-12A"/>
+                            <constraint firstItem="PxK-Ma-PMi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="oXE-VF-luV"/>
+                            <constraint firstItem="jHq-w3-oQP" firstAttribute="height" secondItem="PxK-Ma-PMi" secondAttribute="height" id="qJH-G8-VJX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PxK-Ma-PMi" secondAttribute="trailing" constant="50" id="vEm-zU-z6g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="PxK-Ma-PMi" id="JG0-8p-tlp"/>
+                        <outlet property="priceTextField" destination="jHq-w3-oQP" id="ugY-9P-qrK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

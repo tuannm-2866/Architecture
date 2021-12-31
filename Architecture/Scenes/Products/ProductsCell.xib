@@ -37,6 +37,9 @@
                         <color key="tintColor" systemColor="systemRedColor"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                        <connections>
+                            <action selector="deleteProductAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iRU-bh-Gao"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYo-CS-V8P">
                         <rect key="frame" x="180" y="0.0" width="60" height="60"/>
@@ -45,6 +48,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                        <connections>
+                            <action selector="editProductAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pfk-Gb-3Df"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

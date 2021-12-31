@@ -59,6 +59,13 @@
 		CB1C472C277B6E8300CBE762 /* Storyboards+ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C472B277B6E8300CBE762 /* Storyboards+ProductDetail.swift */; };
 		CB752183277C335600DE5889 /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB752181277C335600DE5889 /* ProductsCell.swift */; };
 		CB752184277C335600DE5889 /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB752182277C335600DE5889 /* ProductsCell.xib */; };
+		CBA35F22277E0DF600D1B757 /* EditProductsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F1D277E0DF600D1B757 /* EditProductsAssembler.swift */; };
+		CBA35F23277E0DF600D1B757 /* EditProductsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F1E277E0DF600D1B757 /* EditProductsNavigator.swift */; };
+		CBA35F24277E0DF600D1B757 /* EditProductsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F1F277E0DF600D1B757 /* EditProductsUseCase.swift */; };
+		CBA35F25277E0DF600D1B757 /* EditProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F20277E0DF600D1B757 /* EditProductsViewController.swift */; };
+		CBA35F26277E0DF600D1B757 /* EditProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F21277E0DF600D1B757 /* EditProductsViewModel.swift */; };
+		CBA35F28277E128A00D1B757 /* Storyboard+EditProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F27277E128A00D1B757 /* Storyboard+EditProduct.swift */; };
+		CBA35F2A277E12A400D1B757 /* EditProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA35F29277E12A400D1B757 /* EditProduct.storyboard */; };
 		F57DC3F868F1B544AFBB6A52 /* Pods_ArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9A97DC2F2568EA80A70FC9 /* Pods_ArchitectureTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +93,7 @@
 		BAB078877BCEF8D1E1C9ACFC /* Pods-ArchitectureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureTests.debug.xcconfig"; path = "Target Support Files/Pods-ArchitectureTests/Pods-ArchitectureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB1C4692277AA33200CBE762 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1C4695277AA33200CBE762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB1C4697277AA33200CBE762 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		CB1C4697277AA33200CBE762 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB1C4699277AA33300CBE762 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		CB1C469B277AA33300CBE762 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		CB1C469D277AA33300CBE762 /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +145,13 @@
 		CB1C472B277B6E8300CBE762 /* Storyboards+ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+ProductDetail.swift"; sourceTree = "<group>"; };
 		CB752181277C335600DE5889 /* ProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
 		CB752182277C335600DE5889 /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
+		CBA35F1D277E0DF600D1B757 /* EditProductsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductsAssembler.swift; sourceTree = "<group>"; };
+		CBA35F1E277E0DF600D1B757 /* EditProductsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductsNavigator.swift; sourceTree = "<group>"; };
+		CBA35F1F277E0DF600D1B757 /* EditProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductsUseCase.swift; sourceTree = "<group>"; };
+		CBA35F20277E0DF600D1B757 /* EditProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductsViewController.swift; sourceTree = "<group>"; };
+		CBA35F21277E0DF600D1B757 /* EditProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductsViewModel.swift; sourceTree = "<group>"; };
+		CBA35F27277E128A00D1B757 /* Storyboard+EditProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+EditProduct.swift"; sourceTree = "<group>"; };
+		CBA35F29277E12A400D1B757 /* EditProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProduct.storyboard; sourceTree = "<group>"; };
 		D1C5DAA8B2B754595A0CB6FA /* Pods-Architecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Architecture.debug.xcconfig"; path = "Target Support Files/Pods-Architecture/Pods-Architecture.debug.xcconfig"; sourceTree = "<group>"; };
 		E755913F13075F8945F86B39 /* Pods-Architecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Architecture.release.xcconfig"; path = "Target Support Files/Pods-Architecture/Pods-Architecture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1C46B7277AA33300CBE762 /* Storyboards.swift */,
+				CBA35F1C277E0DD400D1B757 /* EditProducts */,
 				CB1C471E277B5EBE00CBE762 /* ProductDetail */,
 				CB1C4709277AA51B00CBE762 /* Products */,
 				CB1C46C2277AA33300CBE762 /* Main */,
@@ -390,6 +405,20 @@
 				CB1C472B277B6E8300CBE762 /* Storyboards+ProductDetail.swift */,
 			);
 			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		CBA35F1C277E0DD400D1B757 /* EditProducts */ = {
+			isa = PBXGroup;
+			children = (
+				CBA35F1D277E0DF600D1B757 /* EditProductsAssembler.swift */,
+				CBA35F1E277E0DF600D1B757 /* EditProductsNavigator.swift */,
+				CBA35F1F277E0DF600D1B757 /* EditProductsUseCase.swift */,
+				CBA35F20277E0DF600D1B757 /* EditProductsViewController.swift */,
+				CBA35F21277E0DF600D1B757 /* EditProductsViewModel.swift */,
+				CBA35F27277E128A00D1B757 /* Storyboard+EditProduct.swift */,
+				CBA35F29277E12A400D1B757 /* EditProduct.storyboard */,
+			);
+			path = EditProducts;
 			sourceTree = "<group>";
 		};
 		EFD7BF02394964171967D171 /* Pods */ = {
@@ -518,6 +547,7 @@
 				CB1C46DD277AA33600CBE762 /* LaunchScreen.storyboard in Resources */,
 				CB1C472A277B649E00CBE762 /* ProductDetail.storyboard in Resources */,
 				CB1C46DA277AA33600CBE762 /* Assets.xcassets in Resources */,
+				CBA35F2A277E12A400D1B757 /* EditProduct.storyboard in Resources */,
 				CB1C4698277AA33200CBE762 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +665,7 @@
 				CB1C46CE277AA33300CBE762 /* MainViewController.swift in Sources */,
 				CB1C4728277B5EE100CBE762 /* ProductDetailViewModel.swift in Sources */,
 				CB1C4707277AA51100CBE762 /* ProductsViewController.swift in Sources */,
+				CBA35F26277E0DF600D1B757 /* EditProductsViewModel.swift in Sources */,
 				CB1C469E277AA33300CBE762 /* UnitTestViewController.swift in Sources */,
 				CB1C471B277ABFED00CBE762 /* ProductRepository.swift in Sources */,
 				CB1C46BF277AA33300CBE762 /* AppUseCase.swift in Sources */,
@@ -649,19 +680,24 @@
 				CB1C4726277B5EE100CBE762 /* ProductDetailUseCase.swift in Sources */,
 				CB1C46BD277AA33300CBE762 /* AppNavigator.swift in Sources */,
 				CB1C4705277AA51100CBE762 /* ProductsNavigator.swift in Sources */,
+				CBA35F23277E0DF600D1B757 /* EditProductsNavigator.swift in Sources */,
 				CB1C46CA277AA33300CBE762 /* MainNavigator.swift in Sources */,
 				CB1C470F277AAE2600CBE762 /* Product.swift in Sources */,
 				CB1C46B0277AA33300CBE762 /* APIOutput.swift in Sources */,
+				CBA35F24277E0DF600D1B757 /* EditProductsUseCase.swift in Sources */,
 				CB1C46D3277AA33300CBE762 /* UIViewController+.swift in Sources */,
 				CB1C46BB277AA33300CBE762 /* AppAssembler.swift in Sources */,
 				CB1C46D0277AA33300CBE762 /* MainViewModel.swift in Sources */,
 				CB1C46B8277AA33300CBE762 /* Storyboards.swift in Sources */,
 				CB1C46AC277AA33300CBE762 /* APIError.swift in Sources */,
 				CB1C46B2277AA33300CBE762 /* APIService.swift in Sources */,
+				CBA35F25277E0DF600D1B757 /* EditProductsViewController.swift in Sources */,
 				CB1C4706277AA51100CBE762 /* ProductsUseCase.swift in Sources */,
 				CB1C4704277AA51100CBE762 /* ProductsAssembler.swift in Sources */,
 				CB1C46D5277AA33300CBE762 /* UIViewController+Rx.swift in Sources */,
 				CB1C4727277B5EE100CBE762 /* ProductDetailViewController.swift in Sources */,
+				CBA35F28277E128A00D1B757 /* Storyboard+EditProduct.swift in Sources */,
+				CBA35F22277E0DF600D1B757 /* EditProductsAssembler.swift in Sources */,
 				CB1C4696277AA33200CBE762 /* AppDelegate.swift in Sources */,
 				CB1C46D8277AA33300CBE762 /* Architecture.xcdatamodeld in Sources */,
 			);
