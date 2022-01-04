@@ -16,7 +16,7 @@ final class ProductsViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var createProductButton: UIBarButtonItem!
     
     // MARK: - Properties
     
@@ -48,12 +48,26 @@ final class ProductsViewController: UIViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = ProductsViewModel.Input(loadTrigger: Driver.just(()),
-                                            selectProductTrigger: tableView.rx.itemSelected.asDriver(),
-                                            deleteProductTrigger: deleteProductSubject.asDriverOnErrorJustComplete(),
-                                            editProductTrigger: editProductSubject.asDriverOnErrorJustComplete()
-
+        let createdProductTrigger = NotificationCenter.default.rx.notification(.createdProduct)
+            .map { $0.object as? Product }
+            .unwrap()
+            .asDriverOnErrorJustComplete()
+        
+        let editedProductTrigger = NotificationCenter.default.rx.notification(.editProduct)
+            .map { $0.object as? Product }
+            .unwrap()
+            .asDriverOnErrorJustComplete()
+        
+        let input = ProductsViewModel.Input(
+            loadTrigger: .just(()),
+            selectProductTrigger: tableView.rx.itemSelected.asDriver(),
+            deleteProductTrigger: deleteProductSubject.asDriverOnErrorJustComplete(),
+            editProductTrigger: editProductSubject.asDriverOnErrorJustComplete(),
+            editedProductTrigger: editedProductTrigger,
+            createProductTrigger: createProductButton.rx.tap.asDriver(),
+            createdProductTrigger: createdProductTrigger
         )
+        
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
         output.products
@@ -90,6 +104,7 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.deleteProduct = {[weak self] in
             self?.deleteProductSubject.onNext(indexPath)
         }
+        
         return cell
     }
 

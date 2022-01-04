@@ -9,7 +9,7 @@ import Foundation
 
 
 struct Product {
-    var id = 0
+    var id = ""
     var name = ""
     var price = 0.0
 }

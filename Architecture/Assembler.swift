@@ -11,6 +11,7 @@ protocol Assembler: AnyObject,
                     ProductsAssembler,
                     ProductDetailAssembler,
                     EditProductsAssembler,
+                    CreateProductAssembler,
                     GatewaysAssembler {
     
 }

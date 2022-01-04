@@ -8,9 +8,14 @@
 import RxSwift
 
 protocol EditProductsUseCaseType {
-    
+    func editProduct(_ product: Product) -> Observable<Product>
+    func notifyEditProduct(_ product: Product)
 }
 
-struct EditProductsUseCase: EditProductsUseCaseType {
-    
+struct EditProductsUseCase: EditProductsUseCaseType, EditProduct {
+    var productGateway: ProductGatewayType
+
+    func notifyEditProduct(_ product: Product) {
+        NotificationCenter.default.post(name: .editProduct, object: product)
+    }
 }

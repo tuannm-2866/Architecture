@@ -10,6 +10,8 @@ import RxSwift
 
 protocol ProductGatewayType {
     func getProductList() -> Observable<[Product]>
+    func createProduct(_ product: Product) -> Observable<Product>
+    func editProduct(_ product: Product) -> Observable<Product>
 }
 
 struct ProductGateway: ProductGatewayType {
@@ -18,5 +20,14 @@ struct ProductGateway: ProductGatewayType {
     func getProductList() -> Observable<[Product]> {
         return productRepository.getProductList()
     }
+    
+    func createProduct(_ product: Product) -> Observable<Product> {
+        return productRepository.createProduct(product)
+    }
+    
+    func editProduct(_ product: Product) -> Observable<Product> {
+        return productRepository.editProduct(product)
+    }
 }
+
 

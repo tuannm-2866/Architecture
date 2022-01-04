@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products View Controller-->
+        <!--Products-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="ProductsViewController" id="Y6W-OH-hqX" customClass="ProductsViewController" customModule="Architecture" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wQZ-5s-xLh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -30,13 +30,18 @@
                             <constraint firstItem="wQZ-5s-xLh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vxy-2N-7cc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Products" id="3dm-Eg-Ewr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sdu-Rj-78q"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="createProductButton" destination="sdu-Rj-78q" id="RwK-iO-0H5"/>
                         <outlet property="tableView" destination="wQZ-5s-xLh" id="dox-hI-0bb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="98"/>
+            <point key="canvasLocation" x="892.75362318840587" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

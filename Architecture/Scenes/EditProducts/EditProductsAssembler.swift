@@ -9,24 +9,25 @@ import UIKit
 import Reusable
 
 protocol EditProductsAssembler {
-    func resolve(navigationController: UINavigationController) -> EditProductsViewController
-    func resolve(navigationController: UINavigationController) -> EditProductsViewModel
+    func resolve(navigationController: UINavigationController, product: Product) -> EditProductsViewController
+    func resolve(navigationController: UINavigationController, product: Product) -> EditProductsViewModel
     func resolve(navigationController: UINavigationController) -> EditProductsNavigatorType
     func resolve() -> EditProductsUseCaseType
 }
 
 extension EditProductsAssembler {
-    func resolve(navigationController: UINavigationController) -> EditProductsViewController {
+    func resolve(navigationController: UINavigationController, product: Product) -> EditProductsViewController {
         let vc = EditProductsViewController.instantiate()
-        let vm: EditProductsViewModel = resolve(navigationController: navigationController)
+        let vm: EditProductsViewModel = resolve(navigationController: navigationController, product: product)
         vc.bindViewModel(to: vm)
         return vc
     }
     
-    func resolve(navigationController: UINavigationController) -> EditProductsViewModel {
+    func resolve(navigationController: UINavigationController, product: Product) -> EditProductsViewModel {
         return EditProductsViewModel(
             navigator: resolve(navigationController: navigationController),
-            useCase: resolve()
+            useCase: resolve(),
+            product: product
         )
     }
 }
@@ -37,6 +38,6 @@ extension EditProductsAssembler where Self: DefaultAssembler {
     }
     
     func resolve() -> EditProductsUseCaseType {
-        return EditProductsUseCase()
+        return EditProductsUseCase(productGateway: resolve())
     }
 }

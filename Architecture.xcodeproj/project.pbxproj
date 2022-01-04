@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6F0730B25B656A9D0B5324EC /* Pods_Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1C374F72B409960F5B0A10 /* Pods_Architecture.framework */; };
+		CB083E212781E8D80083058F /* CreateProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB083E202781E8D70083058F /* CreateProduct.swift */; };
+		CB083E232782013D0083058F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB083E222782013D0083058F /* Constans.swift */; };
+		CB09A8262782E53D000F226B /* EditProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09A8252782E53D000F226B /* EditProduct.swift */; };
 		CB1C4696277AA33200CBE762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C4695277AA33200CBE762 /* AppDelegate.swift */; };
 		CB1C4698277AA33200CBE762 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CB1C4697277AA33200CBE762 /* Podfile */; };
 		CB1C469A277AA33300CBE762 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CB1C4699277AA33300CBE762 /* .swiftlint.yml */; };
@@ -57,6 +60,13 @@
 		CB1C4728277B5EE100CBE762 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C4723277B5EE100CBE762 /* ProductDetailViewModel.swift */; };
 		CB1C472A277B649E00CBE762 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1C4729277B649E00CBE762 /* ProductDetail.storyboard */; };
 		CB1C472C277B6E8300CBE762 /* Storyboards+ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C472B277B6E8300CBE762 /* Storyboards+ProductDetail.swift */; };
+		CB207F762781658400895DB2 /* CreateProductAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB207F712781658400895DB2 /* CreateProductAssembler.swift */; };
+		CB207F772781658400895DB2 /* CreateProductNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB207F722781658400895DB2 /* CreateProductNavigator.swift */; };
+		CB207F782781658400895DB2 /* CreateProductUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB207F732781658400895DB2 /* CreateProductUseCase.swift */; };
+		CB207F792781658400895DB2 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB207F742781658400895DB2 /* CreateProductViewController.swift */; };
+		CB207F7A2781658400895DB2 /* CreateProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB207F752781658400895DB2 /* CreateProductViewModel.swift */; };
+		CB207F7C278165B400895DB2 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB207F7B278165B400895DB2 /* CreateProduct.storyboard */; };
+		CB207F7E278165E300895DB2 /* Storyboards+CreateProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB207F7D278165E300895DB2 /* Storyboards+CreateProduct.swift */; };
 		CB752183277C335600DE5889 /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB752181277C335600DE5889 /* ProductsCell.swift */; };
 		CB752184277C335600DE5889 /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB752182277C335600DE5889 /* ProductsCell.xib */; };
 		CBA35F22277E0DF600D1B757 /* EditProductsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA35F1D277E0DF600D1B757 /* EditProductsAssembler.swift */; };
@@ -91,6 +101,9 @@
 		2B9A97DC2F2568EA80A70FC9 /* Pods_ArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1C374F72B409960F5B0A10 /* Pods_Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB078877BCEF8D1E1C9ACFC /* Pods-ArchitectureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureTests.debug.xcconfig"; path = "Target Support Files/Pods-ArchitectureTests/Pods-ArchitectureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB083E202781E8D70083058F /* CreateProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProduct.swift; sourceTree = "<group>"; };
+		CB083E222782013D0083058F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		CB09A8252782E53D000F226B /* EditProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProduct.swift; sourceTree = "<group>"; };
 		CB1C4692277AA33200CBE762 /* Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Architecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1C4695277AA33200CBE762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB1C4697277AA33200CBE762 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -143,6 +156,13 @@
 		CB1C4723277B5EE100CBE762 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		CB1C4729277B649E00CBE762 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		CB1C472B277B6E8300CBE762 /* Storyboards+ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+ProductDetail.swift"; sourceTree = "<group>"; };
+		CB207F712781658400895DB2 /* CreateProductAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductAssembler.swift; sourceTree = "<group>"; };
+		CB207F722781658400895DB2 /* CreateProductNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductNavigator.swift; sourceTree = "<group>"; };
+		CB207F732781658400895DB2 /* CreateProductUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductUseCase.swift; sourceTree = "<group>"; };
+		CB207F742781658400895DB2 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
+		CB207F752781658400895DB2 /* CreateProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewModel.swift; sourceTree = "<group>"; };
+		CB207F7B278165B400895DB2 /* CreateProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
+		CB207F7D278165E300895DB2 /* Storyboards+CreateProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+CreateProduct.swift"; sourceTree = "<group>"; };
 		CB752181277C335600DE5889 /* ProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
 		CB752182277C335600DE5889 /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
 		CBA35F1D277E0DF600D1B757 /* EditProductsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductsAssembler.swift; sourceTree = "<group>"; };
@@ -238,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1C46A0277AA33300CBE762 /* APIUrls.swift */,
+				CB083E222782013D0083058F /* Constans.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -301,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1C46B7277AA33300CBE762 /* Storyboards.swift */,
+				CB207F702781654000895DB2 /* CreateProduct */,
 				CBA35F1C277E0DD400D1B757 /* EditProducts */,
 				CB1C471E277B5EBE00CBE762 /* ProductDetail */,
 				CB1C4709277AA51B00CBE762 /* Products */,
@@ -381,6 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				CB1C4715277AB85900CBE762 /* GetProductList.swift */,
+				CB083E202781E8D70083058F /* CreateProduct.swift */,
+				CB09A8252782E53D000F226B /* EditProduct.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -405,6 +429,20 @@
 				CB1C472B277B6E8300CBE762 /* Storyboards+ProductDetail.swift */,
 			);
 			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		CB207F702781654000895DB2 /* CreateProduct */ = {
+			isa = PBXGroup;
+			children = (
+				CB207F712781658400895DB2 /* CreateProductAssembler.swift */,
+				CB207F722781658400895DB2 /* CreateProductNavigator.swift */,
+				CB207F732781658400895DB2 /* CreateProductUseCase.swift */,
+				CB207F742781658400895DB2 /* CreateProductViewController.swift */,
+				CB207F752781658400895DB2 /* CreateProductViewModel.swift */,
+				CB207F7B278165B400895DB2 /* CreateProduct.storyboard */,
+				CB207F7D278165E300895DB2 /* Storyboards+CreateProduct.swift */,
+			);
+			path = CreateProduct;
 			sourceTree = "<group>";
 		};
 		CBA35F1C277E0DD400D1B757 /* EditProducts */ = {
@@ -540,6 +578,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB207F7C278165B400895DB2 /* CreateProduct.storyboard in Resources */,
 				CB1C46C4277AA33300CBE762 /* Main.storyboard in Resources */,
 				CB1C470B277AA80600CBE762 /* Product.storyboard in Resources */,
 				CB752184277C335600DE5889 /* ProductsCell.xib in Resources */,
@@ -660,7 +699,9 @@
 				CB1C46C8277AA33300CBE762 /* MainAssembler.swift in Sources */,
 				CB1C4708277AA51100CBE762 /* ProductsViewModel.swift in Sources */,
 				CB1C46AE277AA33300CBE762 /* APIInput.swift in Sources */,
+				CB207F7E278165E300895DB2 /* Storyboards+CreateProduct.swift in Sources */,
 				CB1C46C1277AA33300CBE762 /* AppViewModel.swift in Sources */,
+				CB207F772781658400895DB2 /* CreateProductNavigator.swift in Sources */,
 				CB1C46C6277AA33300CBE762 /* Storyboards+Main.swift in Sources */,
 				CB1C46CE277AA33300CBE762 /* MainViewController.swift in Sources */,
 				CB1C4728277B5EE100CBE762 /* ProductDetailViewModel.swift in Sources */,
@@ -668,20 +709,25 @@
 				CBA35F26277E0DF600D1B757 /* EditProductsViewModel.swift in Sources */,
 				CB1C469E277AA33300CBE762 /* UnitTestViewController.swift in Sources */,
 				CB1C471B277ABFED00CBE762 /* ProductRepository.swift in Sources */,
+				CB207F7A2781658400895DB2 /* CreateProductViewModel.swift in Sources */,
 				CB1C46BF277AA33300CBE762 /* AppUseCase.swift in Sources */,
 				CB1C4716277AB85900CBE762 /* GetProductList.swift in Sources */,
 				CB752183277C335600DE5889 /* ProductsCell.swift in Sources */,
+				CB083E232782013D0083058F /* Constans.swift in Sources */,
 				CB1C4724277B5EE100CBE762 /* ProductDetailAssembler.swift in Sources */,
 				CB1C469C277AA33300CBE762 /* Assembler.swift in Sources */,
 				CB1C46CC277AA33300CBE762 /* MainUseCase.swift in Sources */,
+				CB083E212781E8D80083058F /* CreateProduct.swift in Sources */,
 				CB1C471D277AC09800CBE762 /* ProductGateWay.swift in Sources */,
 				CB1C4725277B5EE100CBE762 /* ProductDetailNavigator.swift in Sources */,
 				CB1C46B5277AA33300CBE762 /* GatewaysAssembler.swift in Sources */,
+				CB207F782781658400895DB2 /* CreateProductUseCase.swift in Sources */,
 				CB1C4726277B5EE100CBE762 /* ProductDetailUseCase.swift in Sources */,
 				CB1C46BD277AA33300CBE762 /* AppNavigator.swift in Sources */,
 				CB1C4705277AA51100CBE762 /* ProductsNavigator.swift in Sources */,
 				CBA35F23277E0DF600D1B757 /* EditProductsNavigator.swift in Sources */,
 				CB1C46CA277AA33300CBE762 /* MainNavigator.swift in Sources */,
+				CB09A8262782E53D000F226B /* EditProduct.swift in Sources */,
 				CB1C470F277AAE2600CBE762 /* Product.swift in Sources */,
 				CB1C46B0277AA33300CBE762 /* APIOutput.swift in Sources */,
 				CBA35F24277E0DF600D1B757 /* EditProductsUseCase.swift in Sources */,
@@ -690,8 +736,10 @@
 				CB1C46D0277AA33300CBE762 /* MainViewModel.swift in Sources */,
 				CB1C46B8277AA33300CBE762 /* Storyboards.swift in Sources */,
 				CB1C46AC277AA33300CBE762 /* APIError.swift in Sources */,
+				CB207F792781658400895DB2 /* CreateProductViewController.swift in Sources */,
 				CB1C46B2277AA33300CBE762 /* APIService.swift in Sources */,
 				CBA35F25277E0DF600D1B757 /* EditProductsViewController.swift in Sources */,
+				CB207F762781658400895DB2 /* CreateProductAssembler.swift in Sources */,
 				CB1C4706277AA51100CBE762 /* ProductsUseCase.swift in Sources */,
 				CB1C4704277AA51100CBE762 /* ProductsAssembler.swift in Sources */,
 				CB1C46D5277AA33300CBE762 /* UIViewController+Rx.swift in Sources */,

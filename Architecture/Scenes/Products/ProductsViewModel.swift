@@ -21,6 +21,9 @@ extension ProductsViewModel: ViewModel {
         let selectProductTrigger: Driver<IndexPath>
         let deleteProductTrigger: Driver<IndexPath>
         let editProductTrigger: Driver<IndexPath>
+        let editedProductTrigger: Driver<Product>
+        let createProductTrigger: Driver<Void>
+        let createdProductTrigger: Driver<Product>
 
     }
     
@@ -36,9 +39,13 @@ extension ProductsViewModel: ViewModel {
         let activityIndicator = ActivityIndicator()
         let isLoading = activityIndicator.asDriver()
         
-        input.loadTrigger
+        Driver.merge(
+            input.loadTrigger,
+            input.createdProductTrigger.mapToVoid(),
+            input.editedProductTrigger.mapToVoid()
+        )
             .flatMapLatest {
-                self.useCase.getProductList()
+                return self.useCase.getProductList()
                     .trackActivity(activityIndicator)
                     .asDriverOnErrorJustComplete()
             }
@@ -61,7 +68,8 @@ extension ProductsViewModel: ViewModel {
                 return (indexPath, products)
             }
             .drive(onNext: { indexPath, products in
-                let updateProducts = products.filter {$0.id != products[indexPath.row].id}
+                let product = products[indexPath.row]
+                let updateProducts = products.filter {$0.id != product.id}
                 productSubject.onNext(updateProducts)
             })
             .disposed(by: disposeBag)
@@ -70,8 +78,15 @@ extension ProductsViewModel: ViewModel {
             .withLatestFrom(products) { indexPath, products in
                 return (indexPath, products)
             }
-            .drive(onNext: { indexPath, product in
-                self.navigator.toEditproduct()
+            .drive(onNext: { indexPath, products in
+                let product = products[indexPath.row]
+                self.navigator.toEditProduct(product: product)
+            })
+            .disposed(by: disposeBag)
+        
+        input.createProductTrigger
+            .drive(onNext: {
+                    self.navigator.toCreateProduct()
             })
             .disposed(by: disposeBag)
         

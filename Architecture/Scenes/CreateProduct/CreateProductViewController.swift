@@ -1,8 +1,8 @@
 //
-//  EditProductsViewController.swift
+//  CreateProductViewController.swift
 //  Architecture
 //
-//  Created by Ngô Minh Tuấn on 30/12/2021.
+//  Created by Ngô Minh Tuấn on 02/01/2022.
 //
 
 import UIKit
@@ -12,18 +12,16 @@ import RxCocoa
 import Reusable
 import Then
 
-final class EditProductsViewController: UITableViewController, Bindable {
+final class CreateProductViewController: UITableViewController, Bindable {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var saveProductButton: UIBarButtonItem!
     // MARK: - Properties
     
-    var viewModel: EditProductsViewModel!
+    var viewModel: CreateProductViewModel!
     var disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
@@ -39,7 +37,7 @@ final class EditProductsViewController: UITableViewController, Bindable {
     
     // MARK: - Methods
     
-    @IBAction func cancelProductAction(_ sender: Any) {
+    @IBAction func cancelButtonAction(_ sender: Any) {
         dismiss(animated: true)
     }
     
@@ -48,35 +46,26 @@ final class EditProductsViewController: UITableViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = EditProductsViewModel.Input(
-            loadTrigger: .just(()),
+        let input = CreateProductViewModel.Input(
             productName: nameTextField.rx.value.orEmpty.asDriver(),
             productPrice: priceTextField.rx.value.orEmpty.asDriver(),
-            editProductTrigger: saveButton.rx.tap.asDriver()
+            createProductTrigger: saveProductButton.rx.tap.asDriver()
         )
         
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
-        output.name
-            .drive(onNext: { [weak self] name in
-                self?.nameTextField.text = name
-            })
-            .disposed(by: disposeBag)
-        
-        output.price
-            .drive(onNext: { [weak self] price in
-                self?.priceTextField.text = "\(price)"
-            })
+        output.error
+            .drive(rx.error)
             .disposed(by: disposeBag)
     }
 }
 
 // MARK: - Binders
-extension EditProductsViewController {
+extension CreateProductViewController {
     
 }
 
 // MARK: - StoryboardSceneBased
-extension EditProductsViewController: StoryboardSceneBased {
-    static var sceneStoryboard = Storyboards.editProduct
+extension CreateProductViewController: StoryboardSceneBased {
+    static var sceneStoryboard = Storyboards.createProduct
 }

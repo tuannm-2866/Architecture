@@ -9,7 +9,8 @@ import UIKit
 
 protocol ProductsNavigatorType {
     func toProductDetail(product: Product)
-    func toEditproduct()
+    func toEditProduct(product: Product)
+    func toCreateProduct()
 }
 
 struct ProductsNavigator: ProductsNavigatorType {
@@ -21,10 +22,20 @@ struct ProductsNavigator: ProductsNavigatorType {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func toEditproduct() {
-        let vc: EditProductsViewController = assembler.resolve(navigationController: navigationController)
-        navigationController.pushViewController(vc, animated: true)
+    func toEditProduct(product: Product) {
+        let nav = UINavigationController()
+        let vc: EditProductsViewController = assembler.resolve(navigationController: nav, product: product)
+        nav.viewControllers = [vc]
+        nav.modalPresentationStyle = .fullScreen
+        navigationController.present(nav, animated: true, completion: nil)
     }
-  
+    
+    func toCreateProduct() {
+        let nav = UINavigationController()
+        let vc: CreateProductViewController = assembler.resolve(navigationController: nav)
+        nav.viewControllers = [vc]
+        nav.modalPresentationStyle = .fullScreen
+        navigationController.present(nav, animated: true, completion: nil)
+    }
 }
 
